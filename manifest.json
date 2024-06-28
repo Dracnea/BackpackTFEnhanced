@@ -6,5 +6,19 @@
     "action": {
       "default_popup": "index.html",
       "default_icon": "/images/enhanced_logo.png"
-    }
+    },
+    "icons": {
+        "16": "/images/enhanced_logo.png",
+        "32": "/images/enhanced_logo.png",
+        "48": "/images/enhanced_logo.png",
+        "128": "/images/enhanced_logo.png"
+      },
+    "content_scripts": [
+        {
+            "js": ["scripts/content.js"],
+            "matches": [
+            "https://backpack.tf/*"
+            ]
+        }
+    ]
   }
