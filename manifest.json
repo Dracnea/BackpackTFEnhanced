@@ -15,7 +15,11 @@
       },
     "content_scripts": [
         {
-            "js": ["scripts/content.js"],
+            "js": [
+                "const/spellTypes.js",
+                "scripts/content.js",
+                "scripts/spellUI.js"
+            ],
             "matches": [
             "https://backpack.tf/*"
             ]

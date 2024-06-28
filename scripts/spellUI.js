@@ -1,6 +1,4 @@
-import {Spells} from '/const/spellTypes.js';
-
-export function main() {
+(function() {
     'use strict';
     var url = window.location.href
     var newRows 
@@ -26,7 +24,7 @@ export function main() {
             }
         }
     }
-};
+})();
 
 function spellSearch(spellNum, thisRow) {
     var thisRowParent = thisRow.parentNode;

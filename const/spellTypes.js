@@ -1,4 +1,4 @@
-export var Spells = {
+var Spells = {
     //voices
     VOICES: {name: "Voices", color: "#bfbfbf"},
     //colors
