@@ -1,0 +1,10 @@
+{
+    "manifest_version": 3,
+    "name": "Backpack TF Enhanced",
+    "description": "Add Visual and Search Enhancements to backpack.tf. Primarily for Halloween Spells, Summer Adventure tags, Gifted, and other Speciality Items",
+    "version": "1.0",
+    "action": {
+      "default_popup": "index.html",
+      "default_icon": "/images/enhanced_logo.png"
+    }
+  }
