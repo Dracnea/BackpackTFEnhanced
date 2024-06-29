@@ -19,4 +19,6 @@ var Spells = {
     EXORCISM: {name: "Exorcism", color: "#bfbfbf"},
     FIRE: {name: "Halloween Fire", color: "#33cc00"},
     BOMBS: {name: "Pumpkin Bombs", color: "#ff6600"},
+
+    DEFAULT:{name: "Unknown Spell", color: "#f442bc"}
 };

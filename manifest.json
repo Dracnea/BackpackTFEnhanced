@@ -15,10 +15,15 @@
       },
     "content_scripts": [
         {
+            "css": [
+                "styles/styles.css"
+            ],
             "js": [
+                "const/backpacktfClassNames.js",
                 "const/spellTypes.js",
                 "scripts/content.js",
-                "scripts/spellUI.js"
+                "scripts/spellUI.js",
+                "scripts/searcher.js"
             ],
             "matches": [
             "https://backpack.tf/*"

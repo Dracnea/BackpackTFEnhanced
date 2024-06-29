@@ -1,18 +1,19 @@
 (function() {
     'use strict';
     var url = window.location.href
+
+    //May have to change row or add new row type to grab for first segment
     var newRows 
     if(url.includes("premium")) {
         newRows = document.querySelectorAll("li.item")
     }
     else {
         newRows = document.querySelectorAll("div.item")
-    } 
+    }
+    //Keep to append spells to item names for reading ease
     var newDesc = document.querySelectorAll("h5")
 
     for(var i = 0; i < newRows.length; i++){
-        var spell1 = "data-spell_1"
-        var spell2 = "data-spell_2"
 
         if(newRows[i].getAttribute(spell1) != null) {
             spellSearch(spell1, newRows[i]);
@@ -27,16 +28,17 @@
 })();
 
 function spellSearch(spellNum, thisRow) {
-    var thisRowParent = thisRow.parentNode;
-    var thisRowGrandParent = thisRow.parentNode.parentNode;
-
     var spellName = thisRow.getAttribute(spellNum);
-
-    var currentStyle = thisRowGrandParent.getAttribute("style")
-
-    var currentColor
+    var spellChild1 = document.createElement("div");
+    spellChild1.classList.add('spell1');
+    var spellChild2 = document.createElement("div");
+    spellChild2.classList.add('spell2');
+    
     if(spellName != null) {
-        currentColor = determineSpell(spellName)
+        var currentColor = determineSpell(spellName)
+
+        //update to remove switch
+        //adapt for voices + paint spell to move paint to slot 2
 
         switch(currentColor) {
         case Spells.FIRE.color:
@@ -48,10 +50,12 @@ function spellSearch(spellNum, thisRow) {
         case Spells.TEAMSPIRIT.color:
         case Spells.ROTTEN.color:
         case Spells.HEADLESS.color:
-            thisRowParent.setAttribute("style", currentStyle + ";background-color: " + currentColor)
+            spellChild2.style.backgroundColor = currentColor;
+            thisRow.appendChild(spellChild2);
             break
         default:
-            thisRowGrandParent.setAttribute("style", currentStyle + ";background-color: " + currentColor)
+            spellChild1.style.backgroundColor = currentColor;
+            thisRow.appendChild(spellChild1);
             break
         }
     }
@@ -67,5 +71,5 @@ function determineSpell(spellName) {
         }
     }
     //return default color
-    return "#f442bc"
+    return Spells.DEFAULT.color
 }
