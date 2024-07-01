@@ -16,48 +16,26 @@
     for(var i = 0; i < newRows.length; i++){
 
         if(newRows[i].getAttribute(spell1) != null) {
-            spellSearch(spell1, newRows[i]);
+            spellSearch(spell1, newRows[i], true);
             newDesc[i].textContent += "\r\n" + newRows[i].getAttribute(spell1) + " ";
 
             if(newRows[i].getAttribute(spell2) != null){
-                spellSearch(spell2, newRows[i])
+                spellSearch(spell2, newRows[i], false)
                 newDesc[i].textContent += "\r\n" + newRows[i].getAttribute(spell2);
             }
         }
     }
 })();
 
-function spellSearch(spellNum, thisRow) {
-    var spellName = thisRow.getAttribute(spellNum);
-    var spellChild1 = document.createElement("div");
-    spellChild1.classList.add('spell1');
-    var spellChild2 = document.createElement("div");
-    spellChild2.classList.add('spell2');
+function spellSearch(spell, thisRow, spellFirst) {
+    var spellName = thisRow.getAttribute(spell);
+    var spellChild = document.createElement("div");
+    
+    spellFirst ? spellChild.classList.add('spell1') : spellChild.classList.add('spell2');
     
     if(spellName != null) {
-        var currentColor = determineSpell(spellName)
-
-        //update to remove switch
-        //adapt for voices + paint spell to move paint to slot 2
-
-        switch(currentColor) {
-        case Spells.FIRE.color:
-        case Spells.BOMBS.color:
-        case Spells.VIOLET.color:
-        case Spells.CORPSE.color:
-        case Spells.GANGREEN.color:
-        case Spells.BRUISED.color:
-        case Spells.TEAMSPIRIT.color:
-        case Spells.ROTTEN.color:
-        case Spells.HEADLESS.color:
-            spellChild2.style.backgroundColor = currentColor;
-            thisRow.appendChild(spellChild2);
-            break
-        default:
-            spellChild1.style.backgroundColor = currentColor;
-            thisRow.appendChild(spellChild1);
-            break
-        }
+        spellChild.style.backgroundColor = determineSpell(spellName);
+        thisRow.appendChild(spellChild);
     }
 }
 
