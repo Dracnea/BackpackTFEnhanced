@@ -3,8 +3,8 @@
     float: right;
     height: 12px;
     position: absolute;
-    left: 3px;
-    top: 3px;
+    right: 3px;
+    top: 18px;
     width: 12px;
     z-index: 2;
 }
@@ -14,8 +14,18 @@
     float: right;
     height: 12px;
     position: absolute;
-    left: 18px;
-    top: 3px;
+    right: 18px;
+    top: 18px;
     width: 12px;
     z-index: 2;
+}
+
+.summer {
+    display: inline-block;
+    font: normal normal normal 14px / 1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    position: relative;
+    top: -2px;
 }
