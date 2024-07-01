@@ -12,22 +12,31 @@
         "32": "/images/enhanced_logo.png",
         "48": "/images/enhanced_logo.png",
         "128": "/images/enhanced_logo.png"
-      },
+    },
+    "web_accessible_resources": [
+      {
+        "resources": [],
+        "matches": ["https://backpack.tf/*"]
+      }
+    ],
     "content_scripts": [
         {
-            "css": [
-                "styles/styles.css"
-            ],
-            "js": [
-                "const/backpacktfClassNames.js",
-                "const/spellTypes.js",
-                "scripts/content.js",
-                "scripts/spellUI.js",
-                "scripts/searcher.js"
-            ],
-            "matches": [
-            "https://backpack.tf/*"
-            ]
+          "css": [
+              "styles/styles.css"
+          ],
+          "js": [
+              "const/backpacktfClassNames.js",
+              "const/spellTypes.js",
+
+              "scripts/spell.js",
+              "scripts/summer.js",
+              "scripts/content.js",
+              "scripts/UI.js",
+              "scripts/searcher.js"
+          ],
+          "matches": [
+          "https://backpack.tf/*"
+          ]
         }
     ]
   }
