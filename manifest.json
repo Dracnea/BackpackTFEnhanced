@@ -30,9 +30,7 @@
 
               "scripts/spell.js",
               "scripts/summer.js",
-              "scripts/content.js",
-              "scripts/UI.js",
-              "scripts/searcher.js"
+              "scripts/UI.js"
           ],
           "matches": [
           "https://backpack.tf/*"

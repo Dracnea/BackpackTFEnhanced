@@ -1,4 +1,4 @@
-var Spells = {
+const Spells = {
     //voices
     VOICES: {name: "Voices", color: "#bfbfbf"},
     //colors

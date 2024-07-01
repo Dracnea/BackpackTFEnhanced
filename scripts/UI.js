@@ -1,6 +1,5 @@
 (function() {
     'use strict';
-    var url = window.location.href
 
     //May have to change row or add new row type to grab for first segment
     var newRows = document.querySelectorAll(".item")

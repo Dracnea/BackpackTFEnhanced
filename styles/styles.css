@@ -1,23 +1,19 @@
-.spell1 {
+.spell1,.spell2 {
     border-radius: 6px;
     float: right;
     height: 12px;
     position: absolute;
-    right: 3px;
     top: 18px;
     width: 12px;
     z-index: 2;
 }
 
+.spell1 {
+    right: 3px;
+}
+
 .spell2 {
-    border-radius: 6px;
-    float: right;
-    height: 12px;
-    position: absolute;
     right: 18px;
-    top: 18px;
-    width: 12px;
-    z-index: 2;
 }
 
 .summer {
