@@ -1,6 +1,6 @@
 (async function() {
     //find a better programtic way to wait until page fully loads rather than a sleep cycle
-    if(isProfilePage){
+    if(window.location.href.indexOf("profiles") != -1){
         console.log("Sleep Period")
         await sleep(10000)
     }
@@ -11,6 +11,7 @@
     
     //Keep to append spells to item names for reading ease
     var newDesc = document.querySelectorAll("h5")
+    var emptyH5 = newDesc.length == 0;
 
     //change to a for each since iterating through all instances
     //have separate body methods for classifieds/premium vs profiles, this way profile image names can be updated and remove need to do extra url type checks
@@ -18,13 +19,13 @@
 
         if(newRows[i].getAttribute(spell1) != null) {
             spellApply(spell1, newRows[i], true);
-            if(!isProfilePage){
+            if(!emptyH5){
                 newDesc[i].textContent += "\r\n" + newRows[i].getAttribute(spell1) + " ";
             }
         
             if(newRows[i].getAttribute(spell2) != null){
                 spellApply(spell2, newRows[i], false)
-                if(!isProfilePage){
+                if(!emptyH5){
                     newDesc[i].textContent += "\r\n" + newRows[i].getAttribute(spell2);
                 }
             }
@@ -32,7 +33,7 @@
 
         if(newRows[i].getAttribute(summerTag) != null){
             summerApply(newRows[i])
-            if(!isProfilePage){
+            if(!emptyH5){
                 newDesc[i].textContent += "\r\n" + "Summer Adventure";
             }
         }

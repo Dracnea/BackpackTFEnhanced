@@ -1,1 +1,0 @@
-const isProfilePage = window.location.href.indexOf("profiles") != -1
