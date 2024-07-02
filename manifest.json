@@ -27,13 +27,16 @@
           "js": [
               "const/backpacktfClassNames.js",
               "const/spellTypes.js",
+              "const/pageInfo.js",
 
+              "scripts/support.js",
               "scripts/spell.js",
               "scripts/summer.js",
               "scripts/UI.js"
           ],
           "matches": [
-          "https://backpack.tf/*"
+          "https://backpack.tf/*",
+          "http://backpack.tf/*"
           ]
         }
     ]
